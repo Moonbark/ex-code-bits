@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+div {
+  margin: calc(2vw + 2vh);
+  display: grid;
+}
+
+p {
+  border: 1px solid black;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+div:nth-of-type(1) {
+  background-color: tomato;
+  grid-template-rows: 10% auto auto;
+}
+
+div:nth-of-type(2) {
+  background-color: lightblue;
+  grid-template-rows: 1fr auto auto;
+}
+
+div:nth-of-type(3) {
+  background-color: lightgreen;
+  grid-template-rows: 2fr 3fr 1fr;
+}
+
+/*
+// разница между 1fr и auto
+
+// На примере свойства grid-template-rows:
+
+// fr или fractional unit это часть свободного пространства, соответственно 1fr равен одной части от всего оставшегося свободно пространства, т.е это заданное значение ширины.
+
+// при варианте auto ширина будет зависеть от ширины контейнера и от ширины контента каждого item'a расположенного в этом ряду, т.е не заданное значение ширины.
+
+// И auto и fr работают со свободным пространством. Если его нет, то размеры элемента будут равняться размеру его содержимого.
+
+// Когда они расположены вместе, например, grid-template-rows: 1fr auto, то "выигрывает" 1fr (2 пример).
+
+// Ещё одно отличие fr от auto заключается в том, что с помощью fr можно управлять сколько пространства нужно "откусить" (3 пример).
+*/
