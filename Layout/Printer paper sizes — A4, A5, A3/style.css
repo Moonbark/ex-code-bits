@@ -1,0 +1,46 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  background: rgb(204,204,204); 
+}
+
+.page {
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+}
+
+.page[data-size="A4"] {  
+  width: 21cm;
+  height: 29.7cm; 
+}
+.page[data-size="A4"][data-layout="landscape"] {
+  width: 29.7cm;
+  height: 21cm;  
+}
+.page[data-size="A3"] {
+  width: 29.7cm;
+  height: 42cm;
+}
+.page[data-size="A3"][data-layout="landscape"] {
+  width: 42cm;
+  height: 29.7cm;  
+}
+.page[data-size="A5"] {
+  width: 14.8cm;
+  height: 21cm;
+}
+.page[data-size="A5"][data-layout="landscape"] {
+  width: 21cm;
+  height: 14.8cm;  
+}
+@media print {
+  body, .page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
